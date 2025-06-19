@@ -587,3 +587,38 @@ footer {
     --gray-300: #606060;
   }
 }
+
+/* Profile Photo Updates - Add to your existing CSS */
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: var(--gray-200);
+    border: 2px solid var(--gray-300);
+    flex-shrink: 0;
+    overflow: hidden; /* Ensures clean image cropping */
+    /* Remove the old flexbox centering and text styles */
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills circle without distortion */
+    border-radius: 50%;
+    display: block; /* Removes any inline spacing */
+}
+
+/* Fallback styling in case image doesn't load */
+.profile-photo:empty::before {
+    content: "Photo\APlaceholder";
+    white-space: pre;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--gray-500);
+    font-size: 0.875rem;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
