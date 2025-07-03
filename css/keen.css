@@ -47,9 +47,9 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--background);
-  max-width: 65ch;
+  max-width: 80ch;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px 30px;
 }
 
 /* ==========================================================================
@@ -447,7 +447,7 @@ footer {
 
 @media (max-width: 768px) {
   body {
-    padding: 20px 16px;
+    padding: 20px 20px;
   }
   
   .display {
@@ -584,7 +584,7 @@ footer {
     --text-primary: #000000;
     --background: #FFFFFF;
     --gray-200: #808080;
-    --gray-300: #606060;
+    --gray-300: #606060;    
   }
 }
 
