@@ -121,3 +121,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('js-loaded');
+    // rest of your code...
+});

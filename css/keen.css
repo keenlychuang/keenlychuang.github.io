@@ -709,24 +709,23 @@ nav {
     animation: fadeInUp 0.8s ease 0.6s forwards;
 }
 
-.project-card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s ease;
-}
-
-.project-card.visible {
+/* Show elements by default, animate them in as bonus */
+.project-card,
+.contact-item {
     opacity: 1;
     transform: translateY(0);
-}
-
-.contact-item {
-    opacity: 0;
-    transform: translateY(20px);
     transition: all 0.3s ease;
 }
 
-.contact-item.visible {
+/* Only hide them if JavaScript is working */
+.js-loaded .project-card,
+.js-loaded .contact-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.js-loaded .project-card.visible,
+.js-loaded .contact-item.visible {
     opacity: 1;
     transform: translateY(0);
 }
