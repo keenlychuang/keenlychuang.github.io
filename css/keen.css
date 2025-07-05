@@ -591,8 +591,8 @@ footer {
 /* Profile Photo Updates - Add to your existing CSS */
 
 .profile-photo {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background-color: var(--gray-200);
     border: 2px solid var(--gray-300);
