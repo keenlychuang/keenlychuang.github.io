@@ -106,23 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
         updateProfilePhoto(isDark);
 
         themeToggle.addEventListener('click', () => {
-            const orbitalContainer = themeToggle.querySelector('.orbital-container');
-            
-            // Add switching animation
-            orbitalContainer.classList.add('switching');
-            
-            // Toggle theme after brief delay for visual effect
-            setTimeout(() => {
-                document.body.classList.toggle('dark-mode');
-                const isDark = document.body.classList.contains('dark-mode');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                updateProfilePhoto(isDark);
-            }, 300);
-            
-            // Remove animation class after completion
-            setTimeout(() => {
-                orbitalContainer.classList.remove('switching');
-            }, 600);
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateProfilePhoto(isDark);
         });
     }
 

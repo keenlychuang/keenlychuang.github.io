@@ -922,7 +922,7 @@ footer {
     width: 36px;
     height: 36px;
     position: relative;
-    transform: rotate(-15deg); /* Off-axis angle */
+    transform: rotate(-25deg); /* Off-axis angle */
 }
 
 .orbit-dot {
@@ -931,12 +931,14 @@ footer {
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Remove the .switching styles and replace with theme-based states */
 .orbit-dot.large {
     width: 20px;
     height: 20px;
     top: 8px;
     left: 2px;
     background: var(--text-primary);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .orbit-dot.small {
@@ -945,24 +947,16 @@ footer {
     top: 2px;
     right: 2px;
     background: var(--gray-500);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animation states */
-.orbital-container.switching .orbit-dot.large {
+/* Dark mode states */
+body.dark-mode .orbit-dot.large {
     transform: translate(20px, -10px) scale(0.6);
     background: var(--gray-500);
 }
 
-.orbital-container.switching .orbit-dot.small {
-    transform: translate(-20px, 10px) scale(1.67);
-    background: var(--text-primary);
-}
-
-/* Dark mode adjustments */
-body.dark-mode .orbit-dot.large {
-    background: var(--gray-100);
-}
-
 body.dark-mode .orbit-dot.small {
-    background: var(--gray-600);
+    transform: translate(-20px, 10px) scale(1.67);
+    background: var(--gray-100);
 }
