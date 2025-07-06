@@ -631,23 +631,29 @@ footer {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
     z-index: 1000;
+    cursor: pointer;
 }
 
-.theme-toggle:hover {
+.toggle-slider {
+    width: 44px;
+    height: 22px;
     background: var(--gray-200);
-    transform: scale(1.1);
+    border-radius: 22px;
+    position: relative;
+    transition: background 0.2s ease;
+    border: 1px solid var(--gray-300);
+}
+
+.toggle-handle {
+    width: 16px;
+    height: 16px;
+    background: var(--text-primary);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    transition: transform 0.2s ease;
 }
 
 /* Dark mode styles */
@@ -667,7 +673,7 @@ body.dark-mode {
 /* Scroll Progress Bar */
 .progress-bar {
     position: fixed;
-    top: 0;
+    bottom: 0;  /* Changed from top: 0 */
     left: 0;
     width: 0%;
     height: 3px;
@@ -708,6 +714,25 @@ nav {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+body.dark-mode .toggle-slider {
+    background: var(--gray-700);  /* Dark background */
+    border-color: var(--gray-500);
+}
+
+body.dark-mode .toggle-handle {
+    background: var(--gray-100);  /* Light handle on dark background */
+    transform: translateX(19px);
+}
+
+/* Subtle hover effect */
+.theme-toggle:hover .toggle-slider {
+    border-color: var(--gray-500);
+}
+
+body.dark-mode .theme-toggle:hover .toggle-slider {
+    border-color: var(--gray-300);
 }
 
 /* Show elements by default, animate them in as bonus */
