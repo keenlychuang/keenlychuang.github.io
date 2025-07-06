@@ -614,20 +614,24 @@ footer {
 .profile-photo {
     width: 200px;
     height: 200px;
-    border-radius: 50%;
+    border-radius: 8px; /* Match project cards */
     background-color: var(--gray-200);
-    border: 2px solid var(--gray-300);
+    border: 1px solid var(--gray-100);
     flex-shrink: 0;
-    overflow: hidden; /* Ensures clean image cropping */
-    /* Remove the old flexbox centering and text styles */
+    overflow: hidden;
+    margin-top: 0;
+    align-self: flex-start; /* Ensures photo aligns to top of flex container */
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
 }
 
 .profile-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills circle without distortion */
-    border-radius: 50%;
-    display: block; /* Removes any inline spacing */
+    object-fit: cover;
+    border-radius: 8px; /* Match container */
+    display: block;
 }
 
 /* Fallback styling in case image doesn't load */
@@ -704,7 +708,7 @@ body.dark-mode {
 }
 
 /* Typing Animation */
-.typing-text {
+/* .typing-text {
     border-right: 2px solid var(--accent);
     animation: blink 1s infinite;
 }
@@ -712,7 +716,7 @@ body.dark-mode {
 @keyframes blink {
     0%, 50% { border-right-color: var(--accent); }
     51%, 100% { border-right-color: transparent; }
-}
+} */
 
 /* Enhanced animations */
 .display {
@@ -858,15 +862,15 @@ footer {
 
 /* Profile Layout */
 .profile {
-    display: flex;
+    /* display: flex;
     gap: 2rem;
-    align-items: flex-start;
+    align-items: flex-start; */
     margin-bottom: 2rem;
 }
 
-.profile-content {
+/* .profile-content {
     flex: 1;
-}
+} */
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

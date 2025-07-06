@@ -9,6 +9,34 @@ let currentPhrase = 0;
 let currentChar = 0;
 let isDeleting = false;
 
+function updateProfilePhoto(isDark) {
+    const profileImg = document.querySelector('.profile-photo img');
+    console.log('Profile img element:', profileImg);
+    if (profileImg) {
+        const basePath = 'images/profile_';
+        const suffix = isDark ? 'dark.png' : 'light.png';
+        const newSrc = basePath + suffix;
+        console.log('Switching to:', newSrc);
+        profileImg.src = newSrc;
+    }
+}
+
+// Simple fade-in animation
+function fadeInSubtitle() {
+    const typingText = document.getElementById('typingText');
+    if (!typingText) return;
+    
+    // Set the text once and fade it in
+    typingText.textContent = 'Developer, Writer, Human';
+    typingText.style.opacity = '0';
+    typingText.style.transition = 'opacity 1.5s ease';
+    
+    // Trigger fade-in after a brief delay
+    setTimeout(() => {
+        typingText.style.opacity = '1';
+    }, 1000);
+}
+
 function typeText() {
     const typingText = document.getElementById('typingText');
     if (!typingText) return;
@@ -70,15 +98,20 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Remove the themeIcon references in the theme toggle section
     if (themeToggle) {
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        if (savedTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-        }
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const isDark = savedTheme === 'dark';
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+            }
+            updateProfilePhoto(isDark);
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+            // Update profile photo based on theme
+            updateProfilePhoto(isDark);
         });
     }
 
@@ -91,8 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Start typing animation
-    setTimeout(typeText, 2000);
+    // Start fade-in animation
+    setTimeout(fadeInSubtitle, 1500);
     
     // Setup intersection observer for animations
     const animatedElements = document.querySelectorAll('.project-card, .contact-item');
@@ -127,4 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
 });
