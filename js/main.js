@@ -24,7 +24,7 @@ function typeText() {
     }
 
     if (!isDeleting && currentChar === phrase.length) {
-        setTimeout(() => isDeleting = true, 2000);
+        setTimeout(() => isDeleting = true, 4000);
     } else if (isDeleting && currentChar === 0) {
         isDeleting = false;
         currentPhrase = (currentPhrase + 1) % phrases.length;
