@@ -96,22 +96,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('themeToggle');
     
-    // Remove the themeIcon references in the theme toggle section
+    // Theme Toggle with Orbital Animation
     if (themeToggle) {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            const isDark = savedTheme === 'dark';
-            if (isDark) {
-                document.body.classList.add('dark-mode');
-            }
-            updateProfilePhoto(isDark);
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        const isDark = savedTheme === 'dark';
+        if (isDark) {
+            document.body.classList.add('dark-mode');
+        }
+        updateProfilePhoto(isDark);
 
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
-
-            // Update profile photo based on theme
-            updateProfilePhoto(isDark);
+            const orbitalContainer = themeToggle.querySelector('.orbital-container');
+            
+            // Add switching animation
+            orbitalContainer.classList.add('switching');
+            
+            // Toggle theme after brief delay for visual effect
+            setTimeout(() => {
+                document.body.classList.toggle('dark-mode');
+                const isDark = document.body.classList.contains('dark-mode');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                updateProfilePhoto(isDark);
+            }, 300);
+            
+            // Remove animation class after completion
+            setTimeout(() => {
+                orbitalContainer.classList.remove('switching');
+            }, 600);
         });
     }
 
