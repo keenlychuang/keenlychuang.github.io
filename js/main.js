@@ -100,8 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             !document.body.classList.contains('no-animations'));
     };
 
-    // Load animation preference
-    const animationsDisabled = localStorage.getItem('animationsEnabled') === 'false';
+    // Load animation preference - default to disabled
+    const animationsDisabled = localStorage.getItem('animationsEnabled') !== 'true';
     if (animationsDisabled) {
         document.body.classList.add('no-animations');
     }
