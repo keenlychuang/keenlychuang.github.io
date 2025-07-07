@@ -92,6 +92,50 @@ function showResume() {
 document.addEventListener('DOMContentLoaded', () => {
     // Set js-loaded class for animations
     document.body.classList.add('js-loaded');
+
+    // Animation control - add this function to toggle animations
+    window.toggleAnimations = function() {
+        document.body.classList.toggle('no-animations');
+        localStorage.setItem('animationsEnabled', 
+            !document.body.classList.contains('no-animations'));
+    };
+
+    // Load animation preference
+    const animationsDisabled = localStorage.getItem('animationsEnabled') === 'false';
+    if (animationsDisabled) {
+        document.body.classList.add('no-animations');
+    }
+
+    // Setup intersection observer for scroll-triggered animations
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all fade elements
+    const fadeElements = document.querySelectorAll('.fade-element');
+    fadeElements.forEach((el, index) => {
+        // Stagger delay for elements in the same container
+        if (el.classList.contains('project-card')) {
+            el.style.transitionDelay = `${index * 0.1}s`;
+        }
+        
+        // Check if element is already in viewport
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            el.classList.add('visible');
+        }
+        
+        observer.observe(el);
+    });
     
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('themeToggle');
@@ -121,23 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
             progressBar.style.width = scrolled + '%';
         });
     }
-    
-    // Start fade-in animation
-    setTimeout(fadeInSubtitle, 1500);
-    
-    // Setup intersection observer for animations
-    const animatedElements = document.querySelectorAll('.project-card, .contact-item');
-    animatedElements.forEach((el, index) => {
-        el.style.animationDelay = `${index * 0.1}s`;
-        
-        // Check if element is already in viewport
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-            el.classList.add('visible');
-        }
-        
-        observer.observe(el);
-    });
     
     // Update last modified date (if element exists)
     const lastUpdatedEl = document.getElementById('lastUpdated');

@@ -399,6 +399,15 @@ ol ul {
   border-bottom: 1px solid var(--gray-200);
 }
 
+.js-loaded .header {
+    border-bottom-color: transparent;
+    animation: fadeInBorder 0.8s ease 0.8s forwards;
+}
+
+@keyframes fadeInBorder {
+    to { border-bottom-color: var(--gray-200); }
+}
+
 .subtitle {
   color: var(--gray-500);
   font-size: 1.1rem;
@@ -718,27 +727,68 @@ body.dark-mode {
     51%, 100% { border-right-color: transparent; }
 } */
 
+/* Base fade-in system */
+.fade-element {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+/* Only hide elements if JavaScript is working */
+.js-loaded .fade-element {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.js-loaded .fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 /* Enhanced animations */
-.display {
+.js-loaded .display {
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 0.8s ease forwards;
 }
 
-.subtitle {
+.js-loaded .subtitle {
     opacity: 0;
     animation: fadeIn 0.6s ease 0.4s forwards;
 }
 
-nav {
+.js-loaded nav {
     opacity: 0;
     animation: fadeIn 0.6s ease 0.2s forwards;
 }
 
-.profile {
+.js-loaded .profile {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+/* Section content that fades in on scroll */
+.js-loaded .section-content {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.js-loaded .section-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation control class - add this to body to disable animations */
+.no-animations .fade-element,
+.no-animations .display,
+.no-animations .subtitle,
+.no-animations nav,
+.no-animations .profile,
+.no-animations footer,
+.no-animations .section-content {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
 }
 
 body.dark-mode .toggle-slider {
@@ -781,7 +831,7 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
     transform: translateY(0);
 }
 
-footer {
+.js-loaded footer {
     opacity: 0;
     animation: fadeIn 0.6s ease 1.2s forwards;
 }
@@ -846,6 +896,15 @@ footer {
     margin-bottom: 2rem;
 }
 
+.contact-item {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--gray-50);
+}
+
 .contact-item h3 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -854,6 +913,7 @@ footer {
 .contact-item ul {
     list-style: none;
     padding-left: 0;
+    display: inline-block;
 }
 
 .contact-item li {
