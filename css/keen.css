@@ -966,6 +966,45 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
     }
 }
 
+/* Life Page Styles */
+.life-section {
+    margin-bottom: 3rem;
+}
+
+.life-section .life-image {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    width: 300px;
+}
+
+.life-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--gray-200);
+}
+
+.life-section .life-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.life-content .project-card {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .life-section .life-image {
+        float: none;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .theme-toggle {
