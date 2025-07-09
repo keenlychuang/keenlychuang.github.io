@@ -862,7 +862,7 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
 
 .project-card {
     padding: 1.5rem;
-    border: 1px solid var(--gray-200);
+    border: .5px solid var(--gray-200);
     border-radius: 8px;
     background: var(--gray-50);
 }
@@ -900,7 +900,7 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
     max-width: 400px;
     margin: 0 auto;
     padding: 1.5rem;
-    border: 1px solid var(--gray-200);
+    border: .5px solid var(--gray-200);
     border-radius: 8px;
     background: var(--gray-50);
 }
@@ -943,6 +943,27 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
     float: left;
     clear: left;
     margin-right: 2rem;
+}
+
+/* Written by Human Badge in Footer */
+.footer-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    width: 131px;
+    height: 42px;
+}
+
+.footer-badge img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .footer-badge {
+        width: 110px;
+        height: 35px;
+    }
 }
 
 /* Responsive adjustments */

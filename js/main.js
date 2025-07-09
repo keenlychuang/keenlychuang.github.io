@@ -11,6 +11,8 @@ let isDeleting = false;
 
 function updateProfilePhoto(isDark) {
     const profileImg = document.querySelector('.profile-photo img');
+    const humanBadge = document.getElementById('humanBadge');
+    
     console.log('Profile img element:', profileImg);
     if (profileImg) {
         const basePath = 'images/profile_';
@@ -18,6 +20,14 @@ function updateProfilePhoto(isDark) {
         const newSrc = basePath + suffix;
         console.log('Switching to:', newSrc);
         profileImg.src = newSrc;
+    }
+    
+    // Update human badge
+    if (humanBadge) {
+        const badgePath = isDark ? 
+            'images/written_by_human/Written-By-a-Human-Not-By-AI-Badge-black.svg' :
+            'images/written_by_human/Written-By-a-Human-Not-By-AI-Badge-white.svg';
+        humanBadge.src = badgePath;
     }
 }
 
