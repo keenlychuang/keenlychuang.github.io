@@ -31,6 +31,16 @@ function updateProfilePhoto(isDark) {
     }
 }
 
+function updateFavicon(isDark) {
+    const favicon = document.querySelector('link[rel="icon"]');
+    if (favicon) {
+        const faviconPath = isDark ? 
+            'images/favicons/favicon_dark_dots/favicon-32x32.png' :
+            'images/favicons/favicon_light_dots/favicon-32x32.png';
+        favicon.href = faviconPath;
+    }
+}
+
 // Simple fade-in animation
 function fadeInSubtitle() {
     const typingText = document.getElementById('typingText');
@@ -158,12 +168,14 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('dark-mode');
         }
         updateProfilePhoto(isDark);
+        updateFavicon(isDark); 
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const isDark = document.body.classList.contains('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             updateProfilePhoto(isDark);
+            updateFavicon(isDark); 
         });
     }
 
