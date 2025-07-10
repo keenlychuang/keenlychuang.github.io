@@ -399,14 +399,14 @@ ol ul {
   border-bottom: 1px solid var(--gray-200);
 }
 
-.js-loaded .header {
+/* .js-loaded .header {
     border-bottom-color: transparent;
     animation: fadeInBorder 0.8s ease 0.8s forwards;
 }
 
 @keyframes fadeInBorder {
     to { border-bottom-color: var(--gray-200); }
-}
+} */
 
 .subtitle {
   color: var(--gray-500);
@@ -618,14 +618,13 @@ footer {
   }
 }
 
-/* Profile Photo Updates - Add to your existing CSS */
-
 .profile-photo {
     width: 200px;
     height: 200px;
     border-radius: 8px; /* Match project cards */
     background-color: var(--gray-200);
-    border: 1px solid var(--gray-100);
+    /* border: 1px solid var(--gray-100);*/
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     flex-shrink: 0;
     overflow: hidden;
     margin-top: 0;
@@ -862,10 +861,13 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
 
 .project-card {
     padding: 1.5rem;
-    border: .5px solid var(--gray-200);
+    /* border: .5px solid var(--gray-200); */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
     border-radius: 8px;
     background: var(--gray-50);
 }
+
 
 .project-card h3 {
     margin-top: 0;
@@ -900,7 +902,8 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
     max-width: 400px;
     margin: 0 auto;
     padding: 1.5rem;
-    border: .5px solid var(--gray-200);
+    /* border: .5px solid var(--gray-200); */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     background: var(--gray-50);
 }
@@ -983,7 +986,8 @@ body.dark-mode .theme-toggle:hover .toggle-slider {
     height: 200px;
     object-fit: cover;
     border-radius: 8px;
-    border: 1px solid var(--gray-200);
+    /* border: 1px solid var(--gray-200); */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .life-section .life-content::after {
@@ -1102,4 +1106,11 @@ body.dark-mode .orbit-dot.large {
 body.dark-mode .orbit-dot.small {
     transform: translate(-18px, 9px) scale(2);    /* Halfway adjustment */
     /* background: var(--gray-100); */
+}
+
+body.dark-mode .profile-photo,
+body.dark-mode .project-card,
+body.dark-mode .contact-item,
+body.dark-mode .life-image img {
+    box-shadow: 0 2px 8px rgba(100, 100, 100, 0.1);
 }
