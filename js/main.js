@@ -153,6 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
+
+    // Uniform fade in for all elements
+    const headerElements = document.querySelectorAll('.display, .subtitle, nav, .profile, footer');
+    headerElements.forEach(el => {
+        el.classList.add('fade-element');
+        observer.observe(el);
+    });
     
     // Observe all fade elements
     const fadeElements = document.querySelectorAll('.fade-element');
