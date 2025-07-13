@@ -412,6 +412,44 @@ ol ul {
     to { border-bottom-color: var(--gray-200); }
 } */
 
+/* Header anchor links - exclude display titles and page headers */
+h2:not(.display):not(.header h1), 
+h3:not(.display):not(.header h1), 
+h4:not(.display):not(.header h1),
+h5:not(.display):not(.header h1),
+h6:not(.display):not(.header h1) {
+  position: relative;
+  cursor: pointer;
+}
+
+h2:not(.display):not(.header h1):hover::before,
+h3:not(.display):not(.header h1):hover::before,
+h4:not(.display):not(.header h1):hover::before,
+h5:not(.display):not(.header h1):hover::before,
+h6:not(.display):not(.header h1):hover::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* Optional: Add a subtle hover effect to the text too */
+h2:not(.display):not(.header h1):hover,
+h3:not(.display):not(.header h1):hover,
+h4:not(.display):not(.header h1):hover,
+h5:not(.display):not(.header h1):hover,
+h6:not(.display):not(.header h1):hover {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+
 .subtitle {
   color: var(--gray-500);
   font-size: 1.1rem;
@@ -645,9 +683,12 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px; /* Match container */
+    border-radius: 8px;
     display: block;
+    transition: opacity 0.3s ease; /* Add this line */
 }
+
+
 
 /* Fallback styling in case image doesn't load */
 .profile-photo:empty::before {

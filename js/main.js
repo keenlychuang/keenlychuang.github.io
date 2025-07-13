@@ -12,6 +12,20 @@ let isDeleting = false;
 function updateProfilePhoto(isDark) {
     const profileImg = document.querySelector('.profile-photo img');
     const humanBadge = document.getElementById('humanBadge');
+    if (profileImg) {
+        // Fade out
+        profileImg.style.opacity = '0';
+        
+        setTimeout(() => {
+            // Change source
+            const basePath = 'images/profile_';
+            const suffix = isDark ? 'dark.png' : 'light.png';
+            profileImg.src = basePath + suffix;
+            
+            // Fade back in
+            profileImg.style.opacity = '1';
+        }, 100);
+    }
     
     console.log('Profile img element:', profileImg);
     if (profileImg) {
@@ -157,6 +171,24 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
     
+    // Make headers linkable - exclude page titles and display headers
+    document.querySelectorAll('h2:not(.display), h3:not(.display), h4, h5, h6').forEach(header => {
+        // Skip if it's inside a .header element
+        if (header.closest('.header')) return;
+        
+        if (!header.id) {
+            const id = header.textContent.toLowerCase()
+                .replace(/[^\w\s-]/g, '')
+                .replace(/\s+/g, '-');
+            header.id = id;
+        }
+        
+        header.addEventListener('click', () => {
+            window.location.hash = header.id;
+            navigator.clipboard.writeText(window.location.href);
+        });
+    });
+
     // Theme Toggle Functionality
     const themeToggle = document.getElementById('themeToggle');
     
