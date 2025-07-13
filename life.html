@@ -7,6 +7,14 @@
     <!-- SVG favicon (modern browsers) -->
     <link rel="icon" href="images/favicons/favicon_dark_dots/dots_dark.svg" type="image/svg+xml">
     <!-- Keen Design System CSS -->
+    <script>   
+        (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+        })();
+    </script>
     <link rel="stylesheet" href="css/keen.css">
     <script src="js/main.js"></script>
 </head>

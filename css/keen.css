@@ -45,8 +45,8 @@ body {
   font-family: "Times New Roman", serif;
   font-size: 1.125rem;
   line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--background);
+  color: var(--text-primary);  /* This should work now */
+  background-color: var(--background);  /* This should work now */
   max-width: 95ch;
   margin: 0 auto;
   padding: 40px 15px;
@@ -514,7 +514,7 @@ footer {
    DARK MODE
    ========================================================================== */
 
-body.dark-mode {
+:root.dark-mode {
     --background: #0F0F0F;
     --text-primary: #E5E5E5;
     --gray-50: #1A1A1A;
@@ -527,11 +527,11 @@ body.dark-mode {
     --accent: #60A5FA;
 }
 
-body.dark-mode .orbit-dot.large {
+.dark-mode .orbit-dot.large {
     transform: translate(18px, -9px) scale(0.5);
 }
 
-body.dark-mode .orbit-dot.small {
+.dark-mode .orbit-dot.small {
     transform: translate(-18px, 9px) scale(2);
 }
 

@@ -9,9 +9,16 @@
     <link rel="icon" href="images/favicons/favicon_dark_dots/dots_dark.svg" type="image/svg+xml">
     <!-- PNG fallback for older browsers
     <link rel="icon" href="images/favicons/favicon_dark_dots/favicon-32x32.png" type="image/png" sizes="32x32"> -->
+    <script>
+        (function() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark-mode');
+        }
+        })();
+    </script>
     <!-- Keen Design System CSS -->
     <link rel="stylesheet" href="css/keen.css">
-    
 </head>
 <body>
     <script src="js/main.js"></script> 

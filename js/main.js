@@ -197,17 +197,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme') || 'light';
         const isDark = savedTheme === 'dark';
         if (isDark) {
-            document.body.classList.add('dark-mode');
+            document.documentElement.classList.add('dark-mode'); // Changed from body to documentElement
         }
         updateProfilePhoto(isDark);
         updateFavicon(isDark); 
 
         themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-            const isDark = document.body.classList.contains('dark-mode');
+            document.documentElement.classList.toggle('dark-mode');
+            const isDark = document.documentElement.classList.contains('dark-mode');
             localStorage.setItem('theme', isDark ? 'dark' : 'light');
             updateProfilePhoto(isDark);
-            updateFavicon(isDark); 
+            updateFavicon(isDark);
         });
     }
 
