@@ -19,7 +19,7 @@ function updateProfilePhoto(isDark) {
         setTimeout(() => {
             // Change source
             const basePath = 'images/profile_';
-            const suffix = isDark ? 'dark.png' : 'light.png';
+            const suffix = isDark ? 'dark.webp' : 'light.webp';
             profileImg.src = basePath + suffix;
             
             // Fade back in
@@ -30,7 +30,7 @@ function updateProfilePhoto(isDark) {
     console.log('Profile img element:', profileImg);
     if (profileImg) {
         const basePath = 'images/profile_';
-        const suffix = isDark ? 'dark.png' : 'light.png';
+        const suffix = isDark ? 'dark.webp' : 'light.webp';
         const newSrc = basePath + suffix;
         console.log('Switching to:', newSrc);
         profileImg.src = newSrc;
@@ -43,6 +43,19 @@ function updateProfilePhoto(isDark) {
             'images/written_by_human/Written-By-a-Human-Not-By-AI-Badge-white.svg';
         humanBadge.src = badgePath;
     }
+}
+
+// Image loading handler
+function handleImageLoad() {
+    document.querySelectorAll('img').forEach(img => {
+        if (img.complete) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
 }
 
 function updateFavicon(isDark) {
@@ -124,6 +137,8 @@ function showResume() {
 
 // Initialize everything on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+    handleImageLoad();
+
     // Set js-loaded class for animations
     document.body.classList.add('js-loaded');
 

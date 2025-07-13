@@ -623,6 +623,30 @@ footer {
     display: block;
 }
 
+/* Image loading placeholders */
+.profile-photo,
+.life-image {
+  background: linear-gradient(90deg, var(--gray-200) 25%, var(--gray-100) 50%, var(--gray-200) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.profile-photo img,
+.life-image img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-photo img.loaded,
+.life-image img.loaded {
+  opacity: 1;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 /* ==========================================================================
    LIFE PAGE COMPONENTS
    ========================================================================== */
