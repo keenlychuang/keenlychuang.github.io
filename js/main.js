@@ -45,14 +45,18 @@ function updateProfilePhoto(isDark) {
     }
 }
 
-// Image loading handler
 function handleImageLoad() {
     document.querySelectorAll('img').forEach(img => {
-        if (img.complete) {
+        if (img.complete && img.naturalHeight !== 0) {
             img.classList.add('loaded');
+            // Also remove shimmer from parent container
+            const container = img.closest('.life-image, .profile-photo');
+            if (container) container.classList.add('loaded');
         } else {
             img.addEventListener('load', () => {
                 img.classList.add('loaded');
+                const container = img.closest('.life-image, .profile-photo');
+                if (container) container.classList.add('loaded');
             });
         }
     });

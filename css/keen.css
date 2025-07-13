@@ -642,6 +642,12 @@ footer {
   opacity: 1;
 }
 
+.life-image.loaded,
+.profile-photo.loaded {
+    background: none;
+    animation: none;
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }
