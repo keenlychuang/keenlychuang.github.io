@@ -32,11 +32,11 @@ function updateProfilePhoto(isDark) {
 }
 
 function updateFavicon(isDark) {
-    const favicon = document.querySelector('link[rel="icon"]');
+    const favicon = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
     if (favicon) {
         const faviconPath = isDark ? 
-            'images/favicons/favicon_dark_dots/favicon-32x32.png' :
-            'images/favicons/favicon_light_dots/favicon-32x32.png';
+            'images/favicons/favicon_dark_dots/dots_dark.svg' :
+            'images/favicons/favicon_light_dots/dots_light.svg';
         favicon.href = faviconPath;
     }
 }
