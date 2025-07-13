@@ -1,4 +1,4 @@
-/* Keen Design System CSS
+/* Keen Design System CSS - Optimized
  * Clean, minimal, functional, timeless with minimal, eye-catching accents
  */
 
@@ -56,22 +56,20 @@ body {
    TYPOGRAPHY
    ========================================================================== */
 
-/* Display/Title Font */
 .display {
   font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 1.2;
   margin-bottom: 1rem;
-  font-weight: 400; /* Add this line */
+  font-weight: 400;
 }
 
-/* Heading Fonts */
 h1 {
   font-family: Georgia, serif;
   font-size: 2rem;
   line-height: 1.3;
   margin-bottom: 1.5rem;
-  font-weight: 400; /* Add this line */
+  font-weight: 400;
 }
 
 h2 {
@@ -80,7 +78,7 @@ h2 {
   line-height: 1.4;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
-  font-weight: 400; /* Add this line */
+  font-weight: 400;
 }
 
 h3 {
@@ -89,21 +87,18 @@ h3 {
   line-height: 1.4;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
-  font-weight: 400; /* Add this line */
+  font-weight: 400;
 }
 
-/* Body Text */
 p {
   margin-bottom: 1.5rem;
 }
 
-/* Small Text */
 small {
   font-size: 0.875rem;
   line-height: 1.5;
 }
 
-/* Labels */
 label, 
 .label {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -161,7 +156,6 @@ nav a:hover {
    CODE STYLING
    ========================================================================== */
 
-/* Inline Code */
 code {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.9em;
@@ -172,7 +166,6 @@ code {
   border: 1px solid var(--gray-200);
 }
 
-/* Code Blocks */
 pre {
   font-family: "Courier New", Courier, monospace;
   background-color: var(--gray-900);
@@ -192,33 +185,6 @@ pre code {
   border-radius: 0;
   color: inherit;
   font-size: inherit;
-}
-
-/* Light Theme Code Block */
-.code-light {
-  background-color: var(--gray-50);
-  color: var(--text-primary);
-  border: 1px solid var(--gray-200);
-}
-
-/* Subtle Code Block */
-.code-subtle {
-  background-color: var(--gray-100);
-  color: var(--gray-700);
-  border-left: 4px solid var(--gray-300);
-  border-radius: 0 4px 4px 0;
-}
-
-/* Terminal/Command Style */
-.code-terminal {
-  background-color: #0D1117;
-  color: #58A6FF;
-}
-
-.code-terminal::before {
-  content: "$ ";
-  color: #7C3AED;
-  user-select: none;
 }
 
 /* ==========================================================================
@@ -250,46 +216,6 @@ tr:hover {
   background-color: var(--gray-50);
 }
 
-/* Table Variants */
-.table-minimal {
-  border: none;
-}
-
-.table-minimal th,
-.table-minimal td {
-  border: none;
-  border-bottom: 1px solid var(--gray-200);
-  padding: 8px 12px;
-}
-
-.table-minimal th {
-  background: none;
-  border-bottom: 2px solid var(--gray-300);
-  font-weight: 600;
-}
-
-.table-minimal tr:hover {
-  background: none;
-}
-
-.table-striped tbody tr:nth-child(even) {
-  background-color: var(--gray-50);
-}
-
-.table-striped tbody tr:nth-child(odd) {
-  background-color: var(--background);
-}
-
-.table-striped tr:hover {
-  background-color: var(--gray-100) !important;
-}
-
-.table-compact th,
-.table-compact td {
-  padding: 8px 12px;
-  font-size: 0.875rem;
-}
-
 /* ==========================================================================
    CALLOUTS
    ========================================================================== */
@@ -310,7 +236,6 @@ tr:hover {
   font-size: 1.1em;
 }
 
-/* Callout Types */
 .callout-info {
   background-color: var(--gray-50);
   border-left-color: var(--accent);
@@ -340,36 +265,6 @@ tr:hover {
   margin: 0;
 }
 
-/* Callout Variations */
-.callout-subtle {
-  background: none;
-  border-left: 2px solid var(--gray-300);
-  padding: 12px 16px;
-  color: var(--gray-700);
-  font-size: 0.875em;
-}
-
-.callout-prominent {
-  border: 1px solid;
-  border-left: 4px solid;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.callout-prominent.callout-info {
-  border-color: var(--accent);
-  border-left-color: var(--accent);
-}
-
-.callout-inline {
-  display: inline-block;
-  padding: 4px 8px;
-  margin: 0 4px;
-  background-color: var(--gray-100);
-  border-left: 3px solid var(--gray-300);
-  font-size: 0.85em;
-  vertical-align: baseline;
-}
-
 /* ==========================================================================
    LISTS
    ========================================================================== */
@@ -395,7 +290,6 @@ ol ul {
    LAYOUT COMPONENTS
    ========================================================================== */
 
-/* Header Section */
 .header {
   text-align: center;
   margin-bottom: 3rem;
@@ -403,16 +297,6 @@ ol ul {
   border-bottom: 1px solid var(--gray-200);
 }
 
-/* .js-loaded .header {
-    border-bottom-color: transparent;
-    animation: fadeInBorder 0.8s ease 0.8s forwards;
-}
-
-@keyframes fadeInBorder {
-    to { border-bottom-color: var(--gray-200); }
-} */
-
-/* Header anchor links - exclude display titles and page headers */
 h2:not(.display):not(.header h1), 
 h3:not(.display):not(.header h1), 
 h4:not(.display):not(.header h1),
@@ -439,7 +323,6 @@ h6:not(.display):not(.header h1):hover::before {
   transition: opacity 0.2s ease;
 }
 
-/* Optional: Add a subtle hover effect to the text too */
 h2:not(.display):not(.header h1):hover,
 h3:not(.display):not(.header h1):hover,
 h4:not(.display):not(.header h1):hover,
@@ -449,14 +332,12 @@ h6:not(.display):not(.header h1):hover {
   transition: color 0.2s ease;
 }
 
-
 .subtitle {
   color: var(--gray-500);
   font-size: 1.1rem;
   margin-top: 0.25rem;
 }
 
-/* Blog Post Meta */
 .post-meta {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 0.875rem;
@@ -464,7 +345,6 @@ h6:not(.display):not(.header h1):hover {
   margin-bottom: 1rem;
 }
 
-/* Section Dividers */
 .section-divider {
   text-align: center;
   margin: 3rem 0;
@@ -473,7 +353,6 @@ h6:not(.display):not(.header h1):hover {
   user-select: none;
 }
 
-/* Article Spacing */
 article {
   margin-bottom: 3rem;
 }
@@ -482,7 +361,6 @@ article h3 {
   margin-top: 2rem;
 }
 
-/* Footer */
 footer {
   text-align: center;
   margin-top: 4rem;
@@ -492,7 +370,6 @@ footer {
   font-size: 0.875rem;
 }
 
-/* Contact Icons */
 .contact-icon {
     width: 16px;
     height: 16px;
@@ -514,6 +391,310 @@ footer {
 }
 
 /* ==========================================================================
+   ANIMATIONS & INTERACTIONS
+   ========================================================================== */
+
+.fade-element {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease;
+}
+
+.js-loaded .fade-element {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.js-loaded .fade-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.js-loaded .display {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.js-loaded .subtitle {
+    opacity: 0;
+    animation: fadeIn 0.6s ease 0.4s forwards;
+}
+
+.js-loaded nav {
+    opacity: 0;
+    animation: fadeIn 0.6s ease 0.2s forwards;
+}
+
+.js-loaded .profile {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease 0.6s forwards;
+}
+
+.js-loaded footer {
+    opacity: 0;
+    animation: fadeIn 0.6s ease 1.2s forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   THEME TOGGLE & PROGRESS BAR
+   ========================================================================== */
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orbital-container {
+    width: 36px;
+    height: 36px;
+    position: relative;
+    transform: rotate(-25deg);
+}
+
+.orbit-dot {
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.orbit-dot.large {
+    width: 16px;
+    height: 16px;
+    top: 9px;
+    left: 4px;
+    background: var(--text-primary);
+}
+
+.orbit-dot.small {
+    width: 8px;
+    height: 8px;
+    top: 4px;
+    right: 4px;
+    background: var(--text-primary);
+}
+
+.progress-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--accent);
+    z-index: 1000;
+    transition: width 0.1s ease;
+}
+
+/* ==========================================================================
+   DARK MODE
+   ========================================================================== */
+
+body.dark-mode {
+    --background: #0F0F0F;
+    --text-primary: #E5E5E5;
+    --gray-50: #1A1A1A;
+    --gray-100: #262626;
+    --gray-200: #404040;
+    --gray-300: #525252;
+    --gray-500: #A3A3A3;
+    --gray-700: #D4D4D4;
+    --gray-900: #F5F5F5;
+    --accent: #60A5FA;
+}
+
+body.dark-mode .orbit-dot.large {
+    transform: translate(18px, -9px) scale(0.5);
+}
+
+body.dark-mode .orbit-dot.small {
+    transform: translate(-18px, 9px) scale(2);
+}
+
+/* ==========================================================================
+   PROFILE & PROJECT COMPONENTS
+   ========================================================================== */
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    background-color: var(--gray-200);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    flex-shrink: 0;
+    overflow: hidden;
+    margin-top: 0;
+    align-self: flex-start;
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.profile-caption {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: 0rem;
+    font-style: italic;
+    width: 200px;
+    float: left;
+    clear: left;
+    margin-right: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.project-card {
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s ease;
+    border-radius: 8px;
+    background: var(--gray-50);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    color: var(--gray-700);
+    margin-bottom: 1rem;
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    font-size: 0.875rem;
+    color: var(--accent);
+}
+
+.contact-item {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    background: var(--gray-50);
+}
+
+.contact-item h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.contact-item ul {
+    list-style: none;
+    padding-left: 0;
+    display: inline-block;
+}
+
+.contact-item li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-badge {
+    display: inline-block;
+    margin-top: 1rem;
+    width: 131px;
+    height: 42px;
+}
+
+.footer-badge img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ==========================================================================
+   LIFE PAGE COMPONENTS
+   ========================================================================== */
+
+.life-section {
+    margin-bottom: 3rem;
+}
+
+.life-section .life-image {
+    float: left;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+    width: 300px;
+}
+
+.life-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.life-section .life-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.caption {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    text-align: center;
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.life-image .caption {
+    width: 300px;
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN
    ========================================================================== */
 
@@ -525,8 +706,9 @@ footer {
   .display {
     font-size: 1.75rem;
   }
+  
   .header {
-    margin-bottom: 2rem;   /* Reduced from existing */
+    margin-bottom: 2rem;
   }
   
   h1 {
@@ -570,18 +752,37 @@ footer {
     font-size: 0.875rem;
   }
   
-  table table {
-    min-width: 600px;
-  }
-  
   .callout {
     margin: 16px -16px;
     border-radius: 0;
     border-left-width: 3px;
   }
   
-  .callout-icon {
-    font-size: 1em;
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .profile-photo {
+    margin: 0 auto;
+  }
+  
+  .footer-badge {
+    width: 110px;
+    height: 35px;
+  }
+  
+  .life-section .life-image {
+    float: none;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .life-image .caption {
+    width: 100%;
   }
 }
 
@@ -589,23 +790,19 @@ footer {
    UTILITY CLASSES
    ========================================================================== */
 
-/* Text Colors */
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--gray-500); }
 .text-accent { color: var(--accent); }
 .text-muted { color: var(--gray-300); }
 
-/* Text Alignment */
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 .text-right { text-align: right; }
 
-/* Font Weights */
 .font-normal { font-weight: 400; }
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
 
-/* Spacing Utilities */
 .mt-0 { margin-top: 0; }
 .mb-0 { margin-bottom: 0; }
 .mt-1 { margin-top: 0.5rem; }
@@ -617,7 +814,6 @@ footer {
 .mt-4 { margin-top: 2rem; }
 .mb-4 { margin-bottom: 2rem; }
 
-/* Screen Reader Only */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -631,535 +827,8 @@ footer {
 }
 
 /* ==========================================================================
-   ACCESSIBILITY ENHANCEMENTS
+   DARK MODE ENHANCED STYLES
    ========================================================================== */
-
-/* Focus Styles */
-*:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
-}
-
-/* Reduced Motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  
-  html {
-    scroll-behavior: auto;
-  }
-}
-
-/* High Contrast Mode */
-@media (prefers-contrast: high) {
-  :root {
-    --text-primary: #000000;
-    --background: #FFFFFF;
-    --gray-200: #808080;
-    --gray-300: #606060;    
-  }
-}
-
-.profile-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px; /* Match project cards */
-    background-color: var(--gray-200);
-    /* border: 1px solid var(--gray-100);*/
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
-    flex-shrink: 0;
-    overflow: hidden;
-    margin-top: 0;
-    align-self: flex-start; /* Ensures photo aligns to top of flex container */
-    float: left;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
-}
-
-.profile-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    transition: opacity 0.3s ease; /* Add this line */
-}
-
-
-
-/* Fallback styling in case image doesn't load */
-.profile-photo:empty::before {
-    content: "Photo\APlaceholder";
-    white-space: pre;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    color: var(--gray-500);
-    font-size: 0.875rem;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-}
-/* ==========================================================================
-   HOMEPAGE SPECIFIC STYLES
-   ========================================================================== */
-
-/* Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-.toggle-slider {
-    width: 44px;
-    height: 22px;
-    background: var(--gray-200);
-    border-radius: 22px;
-    position: relative;
-    transition: background 0.2s ease;
-    border: 1px solid var(--gray-300);
-}
-
-.toggle-handle {
-    width: 16px;
-    height: 16px;
-    background: var(--text-primary);
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 3px;
-    transition: transform 0.2s ease;
-}
-
-/* Dark mode styles */
-body.dark-mode {
-    --background: #0F0F0F;
-    --text-primary: #E5E5E5;
-    --gray-50: #1A1A1A;
-    --gray-100: #262626;
-    --gray-200: #404040;
-    --gray-300: #525252;
-    --gray-500: #A3A3A3;
-    --gray-700: #D4D4D4;
-    --gray-900: #F5F5F5;
-    --accent: #60A5FA; /* Lighter blue for dark mode */
-}
-
-/* Scroll Progress Bar */
-.progress-bar {
-    position: fixed;
-    bottom: 0;  /* Changed from top: 0 */
-    left: 0;
-    width: 0%;
-    height: 3px;
-    background: var(--accent);
-    z-index: 1000;
-    transition: width 0.1s ease;
-}
-
-/* Typing Animation */
-/* .typing-text {
-    border-right: 2px solid var(--accent);
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 50% { border-right-color: var(--accent); }
-    51%, 100% { border-right-color: transparent; }
-} */
-
-/* Base fade-in system */
-.fade-element {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.6s ease;
-}
-/* Only hide elements if JavaScript is working */
-.js-loaded .fade-element {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.js-loaded .fade-element.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* Enhanced animations */
-.js-loaded .display {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s ease forwards;
-}
-
-.js-loaded .subtitle {
-    opacity: 0;
-    animation: fadeIn 0.6s ease 0.4s forwards;
-}
-
-.js-loaded nav {
-    opacity: 0;
-    animation: fadeIn 0.6s ease 0.2s forwards;
-}
-
-.js-loaded .profile {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease 0.6s forwards;
-}
-
-/* Section content that fades in on scroll */
-.js-loaded .section-content {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.js-loaded .section-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Animation control class - add this to body to disable animations */
-.no-animations .fade-element,
-.no-animations .display,
-.no-animations .subtitle,
-.no-animations nav,
-.no-animations .profile,
-.no-animations footer,
-.no-animations .section-content {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-}
-
-body.dark-mode .toggle-slider {
-    background: var(--gray-700);  /* Dark background */
-    border-color: var(--gray-500);
-}
-
-body.dark-mode .toggle-handle {
-    background: var(--gray-100);  /* Light handle on dark background */
-    transform: translateX(19px);
-}
-
-/* Subtle hover effect */
-.theme-toggle:hover .toggle-slider {
-    border-color: var(--gray-500);
-}
-
-body.dark-mode .theme-toggle:hover .toggle-slider {
-    border-color: var(--gray-300);
-}
-
-/* Show elements by default, animate them in as bonus */
-.project-card,
-.contact-item {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.3s ease;
-}
-
-/* Only hide them if JavaScript is working */
-.js-loaded .project-card,
-.js-loaded .contact-item {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.js-loaded .project-card.visible,
-.js-loaded .contact-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.js-loaded footer {
-    opacity: 0;
-    animation: fadeIn 0.6s ease 1.2s forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-    from { 
-        opacity: 0; 
-        transform: translateY(30px);
-    }
-    to { 
-        opacity: 1; 
-        transform: translateY(0);
-    }
-}
-
-/* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.project-card {
-    padding: 1.5rem;
-    /* border: .5px solid var(--gray-200); */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: box-shadow 0.3s ease;
-    border-radius: 8px;
-    background: var(--gray-50);
-}
-
-
-.project-card h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.project-description {
-    color: var(--gray-700);
-    margin-bottom: 1rem;
-}
-
-.project-links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.project-links a {
-    font-size: 0.875rem;
-    color: var(--accent);
-}
-
-/* Contact Grid */
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.contact-item {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    /* border: .5px solid var(--gray-200); */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    background: var(--gray-50);
-}
-
-.contact-item h3 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-
-.contact-item ul {
-    list-style: none;
-    padding-left: 0;
-    display: inline-block;
-}
-
-.contact-item li {
-    margin-bottom: 0.5rem;
-}
-
-/* Profile Layout */
-.profile {
-    /* display: flex;
-    gap: 2rem;
-    align-items: flex-start; */
-    margin-bottom: 2rem;
-}
-
-/* .profile-content {
-    flex: 1;
-} */
-
-.profile-caption {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.75rem;
-    color: var(--gray-500);
-    text-align: center;
-    margin-top: 0rem; /* Reduced from 0.5rem */
-    font-style: italic;
-    width: 200px;
-    float: left;
-    clear: left;
-    margin-right: 2rem;
-}
-
-/* Written by Human Badge in Footer */
-.footer-badge {
-    display: inline-block;
-    margin-top: 1rem;
-    width: 131px;
-    height: 42px;
-}
-
-.footer-badge img {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .footer-badge {
-        width: 110px;
-        height: 35px;
-    }
-}
-
-/* Life Page Styles */
-.life-section {
-    margin-bottom: 3rem;
-}
-
-.life-section .life-image {
-    float: left;
-    margin-right: 2rem;
-    margin-bottom: 1rem;
-    width: 300px;
-}
-
-.life-image img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    /* border: 1px solid var(--gray-200); */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.life-section .life-content::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.life-content .project-card {
-    margin-top: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    .life-section .life-image {
-        float: none;
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 1rem;
-    }
-}
-
-/* Image Caption - reusable for any image */
-.caption {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 0.75rem;
-    color: var(--gray-500);
-    text-align: center;
-    margin-top: 0.5rem;
-    font-style: italic;
-    line-height: 1.4;
-}
-
-/* Specific styling for life section captions */
-.life-image .caption {
-    width: 300px;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-    .life-image .caption {
-        width: 100%;
-    }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .theme-toggle {
-        top: 15px;
-        right: 15px;
-        width: 45px;
-        height: 45px;
-    }
-    
-    .profile {
-        flex-direction: column;
-        text-align: center;
-    }   
-    
-    .profile-photo {
-        margin: 0 auto;
-    }
-}
-
-/* Orbital Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.orbital-container {
-    width: 36px;
-    height: 36px;
-    position: relative;
-    transform: rotate(-25deg); /* Off-axis angle */
-}
-
-.orbit-dot {
-    position: absolute;
-    border-radius: 50%;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.orbit-dot.large {
-    width: 16px;
-    height: 16px;
-    top: 9px;   /* Split the difference */
-    left: 4px;  /* Halfway between 2px and 6px */
-    background: var(--text-primary);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.orbit-dot.small {
-    width: 8px;
-    height: 8px;
-    top: 4px;   /* Split the difference */
-    right: 4px; /* Halfway between 2px and 6px */
-    background: var(--text-primary);
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* For favicon specifically */
-.favicon-rounded {
-    border-radius: 4px;
-}
-
-/* Adjusted dark mode transforms */
-body.dark-mode .orbit-dot.large {
-    transform: translate(18px, -9px) scale(0.5);  /* Halfway adjustment */
-    /* background: var(--gray-500); */
-}
-
-body.dark-mode .orbit-dot.small {
-    transform: translate(-18px, 9px) scale(2);    /* Halfway adjustment */
-    /* background: var(--gray-100); */
-}
 
 body.dark-mode .profile-photo,
 body.dark-mode .project-card,
