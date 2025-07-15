@@ -183,11 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Observe all fade elements
     const fadeElements = document.querySelectorAll('.fade-element');
     fadeElements.forEach((el, index) => {
-        // Stagger delay for elements in the same container
-        if (el.classList.contains('project-card')) {
-            el.style.transitionDelay = `${index * 0.1}s`;
-        }
-        
         // Check if element is already in viewport
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
