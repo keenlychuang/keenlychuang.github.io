@@ -111,12 +111,15 @@ label,
    ========================================================================== */
 
 a {
-  color: var(--accent);
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 2px;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--accent);
+  text-decoration-thickness: 2px;
 }
 
 a:focus {
