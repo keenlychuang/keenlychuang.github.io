@@ -143,6 +143,12 @@ function showResume() {
 document.addEventListener('DOMContentLoaded', () => {
     handleImageLoad();
 
+    // Initialize habit tracker if container exists
+    const habitContainer = document.getElementById('habit-tracker-root');
+    if (habitContainer) {
+        new HabitTracker('habit-tracker-root');
+    }
+
     // Set js-loaded class for animations
     document.body.classList.add('js-loaded');
 

@@ -843,3 +843,76 @@ body.dark-mode .contact-item,
 body.dark-mode .life-image img {
     box-shadow: 0 2px 8px rgba(100, 100, 100, 0.1);
 }
+
+/* Habit Tracker Styles */
+.habit-grid-container {
+    background-color: var(--gray-50);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    overflow-x: auto; /* Add horizontal scroll */
+}
+
+.habit-grid {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1rem;
+    min-width: max-content; /* Remove the margin-top: 8px */
+}
+
+.habit-grid-wrapper {
+    min-width: max-content; /* Prevent compression */
+    width: 100%;
+}
+
+.habit-week {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.habit-day {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.habit-day:hover {
+    transform: scale(1.2);
+}
+
+.habit-empty { background: transparent; cursor: default; }
+.habit-pre-tracking { background: var(--gray-300); }
+.habit-miss { background: var(--gray-400); }
+.habit-early { background: #3B82F6; }
+.habit-midday { background: #2563EB; }
+.habit-evening { background: #1D4ED8; }
+
+.habit-tooltip {
+    position: absolute;
+    background: var(--gray-700);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    display: none;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Month labels */
+.habit-months {
+    position: relative;
+    height: 16px;
+    margin-bottom: 16px; /* Increase from 8px to 16px */
+    min-width: max-content;
+}
+
+.habit-month-label {
+    position: absolute;
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    font-family: Georgia, serif;
+}
