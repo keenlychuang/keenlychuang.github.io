@@ -57,7 +57,7 @@ class HabitTracker {
         const monthStartWeeks = this.getMonthStartWeeks(weeks);
         
         this.container.innerHTML = `
-            <h3 style="font-family: Georgia, serif; margin-bottom: 1rem; color: var(--text-primary);">Baseline Conditioning</h3>
+            <h2 style="font-family: Georgia, serif; margin-bottom: 1rem; color: var(--text-primary);">Baseline Conditioning</h2>
             <div class="habit-grid-container">
                 <div class="habit-grid-wrapper">
                     <!-- Month labels -->
